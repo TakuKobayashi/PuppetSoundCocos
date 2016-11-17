@@ -2,6 +2,9 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+OPENCV_LIB_TYPE:=STATIC
+include $(LOCAL_PATH)/opencv/native/OpenCV.mk
+
 $(call import-add-path,$(LOCAL_PATH)/../../../cocos2d)
 $(call import-add-path,$(LOCAL_PATH)/../../../cocos2d/external)
 $(call import-add-path,$(LOCAL_PATH)/../../../cocos2d/cocos)
@@ -17,6 +20,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp
 LOCAL_SRC_FILES += $(CPP_FILES:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
+OPENCV_INCLUDE_DIR:=$(LOCAL_PATH)/include
+LOCAL_C_INCLUDES+= $(LOCAL_PATH)/opencv/native/include
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
