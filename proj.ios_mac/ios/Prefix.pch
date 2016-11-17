@@ -9,4 +9,5 @@
 
 #ifdef __cplusplus
 	#include "cocos2d.h"
+    #import <opencv2/opencv.hpp>
 #endif
